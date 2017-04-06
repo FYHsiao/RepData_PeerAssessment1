@@ -1,9 +1,8 @@
 ---
 title: 'For Data Sience Program:05 Reproducible Research Course Project 1:'
 output:
-  html_document: default
-  pdf_document: default
-  word_document: default
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r setup knitr global env. parameters, include=FALSE}
@@ -35,7 +34,7 @@ For this part of the assignment, you can ignore the missing values in the datase
 steps_per_day <- aggregate(steps ~ date, data = activity, sum, na.rm = TRUE)
 ```
 2. If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the total number of steps taken each day
-```{r histogram  of steps taken per day}
+```{r }
 hist(steps_per_day$steps, breaks=25, col = "lightblue", xlab = "# of Steps Per Day", ylab = "Frequency (Days)", main = "Histogram of Steps Taken each Day")
 ```
 
@@ -53,7 +52,7 @@ The median number of steps per day should be 10765.
   
 ## What is the average daily activity pattern?
 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-```{r 5-minute interval (x); average number of steps taken(y)}
+```{r }
 #group by intervial
 mean_steps_per_interval <- aggregate(steps ~ interval, data = activity, mean, na.rm = TRUE)
 
@@ -144,7 +143,7 @@ head(activity2)
 
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
-```{r panel plot}
+```{r }
 #group by intervial
 week_steps_per_interval <- aggregate(steps ~ interval+weektype, data = activity2, mean)
 
